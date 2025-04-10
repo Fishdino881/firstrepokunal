@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Call of Duty - Tactical Warfare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: #f1f1f1;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(10, 10, 10, 0.9);
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffe0;
+      text-shadow: 0 0 8px #00ffe0;
+    }
+
+    nav a {
+      margin: 0 20px;
+      color: #ddd;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffe0;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero iframe {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 5, 5, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero-overlay h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-shadow: 0 0 10px #00ffe0;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero-overlay button {
+      background: #00ffe0;
+      color: #000;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .hero-overlay button:hover {
+      background: #00d6b4;
+    }
+
+    section {
+      padding: 80px 40px 40px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #00ffe0;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: #111;
+      border-radius: 10px;
+      width: 260px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,255,224,0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card h3 {
+      padding: 15px;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      background: #0f0f0f;
+      text-align: center;
+      padding: 20px;
+      color: #888;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Modal for login */
+    #loginModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+
+    .modal-content {
+      background: #111;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ffe0;
+      text-align: left;
+      width: 300px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background: #222;
+      border: 1px solid #00ffe0;
+      color: #fff;
+    }
+
+    .modal-content button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      background: #00ffe0;
+      border: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      text-align: right;
+      font-size: 20px;
+      cursor: pointer;
+      color: #00ffe0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CALL OF DUTY</div>
+    <nav>
+      <a href="#">Games</a>
+      <a href="#">Operators</a>
+      <a href="#">Media</a>
+      <a href="#">Community</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <iframe src="https://www.youtube.com/embed/TJg7oMt9vlU?autoplay=1&mute=1&controls=0&loop=1&playlist=TJg7oMt9vlU"
+            frameborder="0" allowfullscreen></iframe>
+    <div class="hero-overlay">
+      <h1>Modern Warfare III</h1>
+      <button onclick="document.getElementById('loginModal').style.display='flex'">Play Now</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Operators</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://staticg.sportskeeda.com/editor/2023/08/d058d-16915171130791-1920.jpg" alt="Ghost" />
+        <h3>Ghost</h3>
+      </div>
+      <div class="card">
+        <img src="https://images8.alphacoders.com/129/1296622.jpg" alt="Price" />
+        <h3>Captain Price</h3>
+      </div>
+      <div class="card">
+        <img src="https://i.redd.it/x5k9nvomrwfa1.jpg" alt="Soap" />
+        <h3>Soap</h3>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Latest News</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1938090/ss_3a490b63fb02e6de0e61b0eb14a4b7702bc6f291.1920x1080.jpg" alt="Update" />
+        <h3>Season Reloaded</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.alphacoders.com/129/1292156.jpg" alt="COD Mobile" />
+        <h3>New Ranked Mode</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Call of Duty Fan Site | Designed by Kunal
+  </footer>
+
+  <!-- Modal -->
+  <div id="loginModal">
+    <div class="modal-content">
+      <div class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">&times;</div>
+      <h3>Login to Play</h3>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+    </div>
+  </div>
+
+</body>
+</html>
